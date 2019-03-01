@@ -1,0 +1,9 @@
+1537249567023	Delete element
+1537253201294	Extract local variable 'STRING_VALUE_INPUT_AS_STRING'
+1537254334316	Delete element
+1537428390785	Copy compilation unit
+1537428396260	Delete element
+1537433561749	Extract method 'isDivisibleByThree'
+1537433574914	Extract method 'isDivisibleByFive'
+1537433705276	Extract method 'CheckForZero'
+1537433740015	Extract method 'ComputeNumber'

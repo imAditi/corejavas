@@ -1,0 +1,5 @@
+1537768122261	Rename type 'DocumentDaoimpl'
+1537781297477	Extract method 'createDocument'
+1537781334168	Extract method 'listDocument'
+1537858522137	Delete element
+1537858885570	Rename type 'TestDuplicateDocument'

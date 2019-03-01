@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>HttpSessionListenerDemo</display-name>
+  <servlet>
+    <servlet-name>HttpSessionTest1Demo</servlet-name>
+    <servlet-class>HttpSessionTest1Demo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HttpSessionTest1Demo</servlet-name>
+    <url-pattern>/listenerTest</url-pattern>
+  </servlet-mapping>
+  <listener>
+    <listener-class>MyHttpSessionListener</listener-class>
+  </listener>
+</web-app>

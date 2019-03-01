@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Course Inquiry Form</title>
+</head>
+<body>
+	<fieldset style = "width: 300px;">
+		<legend>Course Inquiry</legend>
+		<form action="CourseInquiryServlet" method="post">
+			<table>
+				<tr>
+					<td>Name</td>
+					<td><input type="text" name="name" /></td>
+				</tr>
+				<tr>
+					<td>Contact</td>
+					<td><input type="text" name="contact" /></td>
+				</tr>
+				<tr>
+					<td>Gender</td>
+					<td><input type="radio" name="gender" value="male" /> Male
+						&nbsp; <input type="radio" name="gender" value="female" /> Female</td>
+				</tr>
+				<tr>
+					<td>Email</td>
+					<td><input type="text" name="email" /></td>
+				</tr>
+				<tr>
+					<td>City</td>
+					<td><select name="city">
+							<option value="bhopal">Bhopal</option>
+							<option value="indore">Indore</option>
+							<option value="ujjain">Ujjain</option>
+							<option value="hyderabad">Hyderabad</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td>Course</td>
+					<td><input type="checkbox" name="course" value="java" /> Java
+						&nbsp; <input type="checkbox" name="course" value="android" />
+						Android &nbsp; <br /> <input type="checkbox" name="course"
+						value="spring" /> Spring &nbsp; <input type="checkbox"
+						name="course" value="hibernate" /> Hibernate &nbsp;</td>
+				</tr>
+				<tr>
+					<td>Comment</td>
+					<td><textarea rows="5" cols="23" name="comment"></textarea></td>
+				</tr>
+				<tr>
+					<td>Button</td>
+					<td colspan="2" style="text-align: right;">
+					<td><input type="submit" value="save" /></td>
+				</tr>
+			</table>
+		</form>
+	</fieldset>
+</body>
+</html>

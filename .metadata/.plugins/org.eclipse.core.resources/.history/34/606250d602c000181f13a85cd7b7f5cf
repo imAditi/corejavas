@@ -1,0 +1,92 @@
+package com.yash.docapp.main;
+
+import java.util.List;
+import java.util.Scanner;
+
+import com.yash.docapp.daoimpl.DocumentDaoImpl;
+import com.yash.docapp.domain.Document;
+import com.yash.docapp.service.DocumentService;
+import com.yash.docapp.serviceimpl.DocumentServiceImpl;
+import com.yash.docapp.util.MenuUtil;
+
+public class ApplicationStartup {
+	public static void main(String args[]) {
+		startUp(new Scanner(System.in));
+	}
+
+	private static void startUp(Scanner scanner) {
+		int choice;
+		String conti = null;
+
+		DocumentService documentservice = new DocumentServiceImpl(new DocumentDaoImpl());
+		Document document = null;
+		do {
+
+			MenuUtil.printMenu();
+			System.out.println("Enter your choice");
+			choice = scanner.nextInt();
+
+			switch (choice) {
+			case 1:
+				createDocument(scanner, documentservice);
+				break;
+			case 2:
+				List<Document> documents = documentservice.listDocument();
+				for (Document doc : documents) {
+					System.out.println(doc);
+				
+				}
+				break;	
+			case 3:
+				System.out.println("------------Search document------------");
+				String searchTitle = scanner.nextLine();
+			    documents = documentservice.serachDocument(searchTitle);
+				for (Document docs : documents) {
+					System.out.println(docs);
+				}
+				break;
+			case 4:
+				System.out.println("------------Find document by Id------------");
+				break;
+			case 5:
+				System.out.println("------------Delete document------------");
+				break;
+			case 6:
+				System.out.println("------------Sort document------------");
+				break;
+			case 0:
+				System.out.println("------------Thanks for using system------------");
+				System.exit(0);
+			default:
+				System.out.println("...........Galat Jawab..........");
+				break;
+
+			}
+			System.out.println("Do you want to continue : [yes/no] : ");
+
+			conti = scanner.next();
+		} while (conti.equals("yes"));
+
+	}
+
+	private static void listDocument(DocumentService documentservice) {
+		List<Document> documents = documentservice.listDocument();
+		for (Document doc : documents) {
+			System.out.println(doc);
+		}
+	}
+
+	private static void createDocument(Scanner scanner, DocumentService documentservice) {
+		Document document;
+		document = new Document();
+		System.out.println("Enter document id :");
+		document.setId(scanner.nextInt());
+		System.out.println("Enter title :");
+		document.setTitle(scanner.nextLine());
+		scanner.nextLine();
+		System.out.println("Enter description :");
+		document.setDescription(scanner.nextLine());
+		documentservice.addDocument(document);
+	}
+
+}
